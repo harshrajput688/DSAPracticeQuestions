@@ -54,3 +54,28 @@ class KidsWiththeGreatestNumberofCandies{
     }
     
 }
+
+//Better Version
+class KidsWiththeGreatestNumberofCandies{
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        ArrayList<Boolean> list = new ArrayList<>();
+        int max = 0;
+        int candiSum[] = new int[candies.length];
+        for(int i = 0; i<candies.length;i++){
+            if(max < candies[i]){
+                max = candies[i];
+            }
+            candiSum[i] = candies[i]+ extraCandies;
+        }
+     
+        for(int i = 0; i<candies.length;i++){
+            if(candiSum[i]<max){
+                list.add(false);
+            }else{
+                list.add(true);
+            }
+        }
+        return list;
+    }
+    
+}
